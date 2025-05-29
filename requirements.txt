@@ -1,4 +1,3 @@
-pynguin==0.40.0
 pytest
 coverage
 numpy
