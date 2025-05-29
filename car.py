@@ -11,7 +11,7 @@ class Car:
             else:
                 self.speed += change
         else:
-            self.speed += change
+            self.speed += 1
 
         self.step()
 
