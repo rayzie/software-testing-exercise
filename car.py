@@ -11,7 +11,7 @@ class Car:
             else:
                 self.speed += change
         else:
-            self.speed += 1
+            self.speed += change
 
         self.step()
 
@@ -30,4 +30,4 @@ class Car:
         
     def init_time(self):
         self.time = 0
-
+        
