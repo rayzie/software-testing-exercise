@@ -38,4 +38,4 @@ jobs:
                   --output-path pynguin-results \
                   --report-dir pynguin-results \
                   --module-name car
-          pytest pynguin-results/test_car_pynguin.py
+          pytest pynguin-results/test_car.py
