@@ -27,15 +27,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pynguin
-          
-      - name: Run tests with pytest (manual + pynguin)
-        run: |
-          pytest test_car.py pynguin-results/test_car.py
 
-      - name: Generate test with pynguin for lift.py and execute it
+      - name: Run manual tests with pytest
+        run: |
+          pytest test_car.py
+
+      - name: Generate and run Pynguin tests
         run: |
           pynguin --project-path . \
-                  --output-path pynguin-action \
+                  --output-path pynguin-results \
                   --module-name car
-          mv pynguin-action/test_car.py pynguin-action/test_car_pynguin.py
-          pytest test_car.py pynguin-action/test_car_pynguin.py
+          mv pynguin-results/test_car.py pynguin-results/test_car_pynguin.py
+          pytest pynguin-results/test_car_pynguin.py
