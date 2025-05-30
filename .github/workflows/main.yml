@@ -38,5 +38,5 @@ jobs:
                   --output-path pynguin-results \
                   --report-dir pynguin-results \
                   --module-name car
-          cp car.py pynguin-results
+          cp car.py pynguin-results/
           pytest $(find pynguin-results -type f -name "test_*.py")
