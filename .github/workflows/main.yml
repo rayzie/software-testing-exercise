@@ -34,10 +34,8 @@ jobs:
 
       - name: Generate and run Pynguin tests
         run: |
-          mkdir -p pynguin-report
           pynguin --project-path . \
                   --output-path pynguin-results \
-                  --report-dir pynguin-report \
+                  --report-dir pynguin-results \
                   --module-name car
-          mv pynguin-results/test_car.py pynguin-results/test_car_pynguin.py
           pytest pynguin-results/test_car_pynguin.py
