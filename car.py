@@ -27,3 +27,7 @@ class Car:
             raise Exception("Divide by 0! Car did not move!")
         else:
             return self.odometer / self.time
+        
+    def init_time(self):
+        self.time = 0
+
