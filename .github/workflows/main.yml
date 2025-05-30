@@ -27,15 +27,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pynguin
-
-      - name: Run Pynguin to generate tests for car.py
-        run: |
-          pynguin --project-path . \
-                  --module-name car \
-                  --output-path pynguin-results \
-                  --maximum-search-time 10 \
-                  --coverage-metric line
-
+          
       - name: Run tests with pytest (manual + pynguin)
         run: |
           pytest test_car.py pynguin-results/test_car.py
+
+      - name: Generate test with pynguin for lift.py and execute it
+        run: |
+          export PYNGUIN_DANGER_AWARE=X
+          pynguin --project-path. --output-path pynguin-action --module-name car -v
+          cp car. py pynguin-action/ 
+          pytest pynguin-action/test_car.py
