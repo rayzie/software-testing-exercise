@@ -36,11 +36,6 @@ jobs:
         run: |
           pynguin --project-path . \
                   --output-path pynguin-results \
-                  --report-dir pynguin-report \
+                  --report-dir pynguin-results \
                   --module-name car
-          
-          echo "🔍 Listing generated files..."
-          ls -R pynguin-results
-          
-          echo "🚀 Running Pynguin-generated tests..."
           pytest $(find pynguin-results -type f -name "test_*.py")
