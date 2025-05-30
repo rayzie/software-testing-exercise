@@ -34,7 +34,8 @@ jobs:
 
       - name: Generate test with pynguin for lift.py and execute it
         run: |
-          export PYNGUIN_DANGER_AWARE=X
-          pynguin --project-path. --output-path pynguin-action --module-name car -v
-          cp car. py pynguin-action/ 
-          pytest pynguin-action/test_car.py
+          pynguin --project-path . \
+                  --output-path pynguin-action \
+                  --module-name car
+          mv pynguin-action/test_car.py pynguin-action/test_car_pynguin.py
+          pytest test_car.py pynguin-action/test_car_pynguin.py
