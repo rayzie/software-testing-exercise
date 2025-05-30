@@ -34,7 +34,7 @@ jobs:
                   --module-name car \
                   --output-path pynguin-results \
                   --maximum-search-time 10 \
-                  --coverage-metric branch
+                  --coverage-metric line
 
       - name: Run tests with pytest (manual + pynguin)
         run: |
